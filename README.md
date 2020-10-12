@@ -1,7 +1,3 @@
-<h1 align="center">
-    <img alt="Happy" title="Happy Logo" src="web/src/images/Logo.svg" width="200px" />
-</h1>
-
 <h4 align="center">
   🚀 Next Level Week 3.0 🚀
 </h4>
