@@ -5,7 +5,7 @@
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Alcsaw/next-level-week-3">
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/Alcsaw/next-level-week-3">
-  
+
   <a href="https://github.com/Alcsaw/next-level-week-3/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Alcsaw/next-level-week-3">
   </a>
@@ -17,7 +17,7 @@
   <a href="https://github.com/Alcsaw/next-level-week-3/blob/master/LICENSE">
     <img alt="License" src="https://img.shields.io/badge/license-GNU3-brightgreen">
   </a>
-  
+
 </p>
 
 ![Cover](/readme-images/cover.png)
@@ -82,9 +82,8 @@ You need yarn package manager and expo-cli to run this project locally.
     ```bash
     cd backend
     yarn install
-    yarn knex:migrate
-    yarn knex:seed
-    yarn start
+    yarn typeorm migration:run
+    yarn dev
     ```
 3. Start the front end:
     ```bash
