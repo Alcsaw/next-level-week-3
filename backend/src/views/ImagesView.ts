@@ -2,11 +2,9 @@ import Image from '../models/Image';
 
 export default {
   render(image: Image) {
-    //TODO: change URL using .env
-    // https://blog.rocketseat.com.br/variaveis-ambiente-nodejs/
     return {
       id: image.id,
-      url: `http://localhost:3333/uploads/${image.path}`
+      url: `http://${process.env.SERVER_IP}:${process.env.SERVER_PORT}/uploads/${image.path}`
     };
   },
 
