@@ -69,7 +69,7 @@ And the mobile frontend is available at [this link](https://www.figma.com/file/X
 
 here are some of my own contributions to the project (not done by the instructor during the classes):
 
-- TBD
+- Using .env to abstract server IP address and port number;
 
 
 ## ⚙️ Installation - Running locally
