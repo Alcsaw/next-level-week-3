@@ -65,11 +65,14 @@ You can se the project mockup for the web interface in [this link](https://www.f
 And the mobile frontend is available at [this link](https://www.figma.com/file/X27FfVxAgy9f5IFa7ONlph/Happy-Mobile?node-id=0%3A1).
 
 
-## To infinity and beyound
+## Going the extra mile
 
 here are some of my own contributions to the project (not done by the instructor during the classes):
 
-- Using .env to abstract server IP address and port number;
+[x] Using .env to abstract server IP address and port number;
+[] Added phone number as an orphanage info and a button for users to contact the orphanage via WhatsApp;
+[] Added a verification of user's geoposition to load the map in web frontend;
+[x] Better code organization in `mobile` separating styles and components in specific files and folders;
 
 
 ## ⚙️ Installation - Running locally
