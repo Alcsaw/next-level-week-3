@@ -71,9 +71,9 @@ here are some of my own contributions to the project (not done by the instructor
 
 [x] Using `.env` to abstract server IP address and port number (in backend and in both frontends);
 [x] Better code organization in `mobile` separating styles and components in specific files and folders;
-[] Added phone number as an orphanage info and a button for users to contact the orphanage via WhatsApp;
-[] Added a verification of user's geoposition to load the map in web frontend;
+[x] Added a verification of user's geoposition to load the map in web frontend;
 [] Added a verification of user's geoposition to load the map in mobile frontend;
+[] Added phone number as an orphanage info and a button for users to contact the orphanage via WhatsApp;
 
 
 ## ⚙️ Installation - Running locally
@@ -82,20 +82,23 @@ Pre-requisits:
 You need yarn package manager and expo-cli to run this project locally.
 
 1. Clone the repo;
-2. Start the back end:
+2. Setup .env in backend/.env (see the env.example for more information);
+3. Start the back end:
   ```bash
   cd backend
   yarn
   yarn typeorm migration:run
   yarn dev
   ```
-3. Start the front end:
+4. Setup .env in web/.env (see the env.example for more information);
+5. Start the front end:
   ```bash
   cd web
   yarn
   yarn start
   ```
-4. Start the mobile app:
+6. Setup .env.js in mobile\src\config\environment\dev.env.example.js (see the dev.env.example.js for more information);
+7. Start the mobile app:
   ```bash
   cd mobile
   yarn
