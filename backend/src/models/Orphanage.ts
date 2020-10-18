@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn, ManyToOne } from 'typeorm';
 import Image from './Image';
+import Representative from './Representative';
 
 @Entity('orphanages')
 export default class Orphanage {
@@ -32,4 +33,8 @@ export default class Orphanage {
   })
   @JoinColumn({ name: 'orphanage_id' })
   images: Image[];
+
+  @ManyToOne(() => Representative, representative => representative.orphanages)
+  @JoinColumn({ name: 'representative_id' })
+  representative: Representative;
 }
