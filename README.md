@@ -69,11 +69,11 @@ And the mobile frontend is available at [this link](https://www.figma.com/file/X
 
 here are some of my own contributions to the project (not done by the instructor during the classes):
 
-[x] Using `.env` to abstract server IP address and port number (in backend and in both frontends);
-[x] Better code organization in `mobile` separating styles and components in specific files and folders;
-[x] Added a verification of user's geoposition to load the map in web frontend;
-[] Added a verification of user's geoposition to load the map in mobile frontend;
-[] Added phone number as an orphanage info and a button for users to contact the orphanage via WhatsApp;
+- [x] Using `.env` to abstract server IP address and port number (in backend and in both frontends);
+- [x] Better code organization in `mobile` separating styles and components in specific files and folders;
+- [x] Added a verification of user's geoposition to load the map in web frontend;
+- [] Added a verification of user's geoposition to load the map in mobile frontend;
+- [] Added phone number as an orphanage info and a button for users to contact the orphanage via WhatsApp;
 
 
 ## ⚙️ Installation - Running locally
