@@ -69,10 +69,11 @@ And the mobile frontend is available at [this link](https://www.figma.com/file/X
 
 here are some of my own contributions to the project (not done by the instructor during the classes):
 
-[x] Using .env to abstract server IP address and port number;
+[x] Using `.env` to abstract server IP address and port number (in backend and in both frontends);
+[x] Better code organization in `mobile` separating styles and components in specific files and folders;
 [] Added phone number as an orphanage info and a button for users to contact the orphanage via WhatsApp;
 [] Added a verification of user's geoposition to load the map in web frontend;
-[x] Better code organization in `mobile` separating styles and components in specific files and folders;
+[] Added a verification of user's geoposition to load the map in mobile frontend;
 
 
 ## ⚙️ Installation - Running locally
@@ -82,18 +83,24 @@ You need yarn package manager and expo-cli to run this project locally.
 
 1. Clone the repo;
 2. Start the back end:
-    ```bash
-    cd backend
-    yarn install
-    yarn typeorm migration:run
-    yarn dev
-    ```
+  ```bash
+  cd backend
+  yarn
+  yarn typeorm migration:run
+  yarn dev
+  ```
 3. Start the front end:
-    ```bash
-    cd web
-    yarn install
-    yarn start
-    ```
+  ```bash
+  cd web
+  yarn
+  yarn start
+  ```
+4. Start the mobile app:
+  ```bash
+  cd mobile
+  yarn
+  yarn start
+  ```
 
 
 ## 🤔 Contributing

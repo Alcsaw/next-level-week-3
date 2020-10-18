@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Text, View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 
 import MapView, { Callout, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
@@ -23,37 +23,17 @@ const OrphanagesMap: React.FC = () => {
 
   const navigation = useNavigation();
 
-  const getMoviesFromApi = () => {
-    console.log("testing...")
-    return fetch('http://172.23.0.27:3333/orphanages')
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json)
-        return json;
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-
-  useEffect(() => {
-    console.log("Aqui...");
-    //api.get('orphanages').then(response => {
-    /*fetch("https://randomuser.me/api/").then(response => {
-      console.log("Fazendo consulta à API");
-      console.log(response);
-      //setOrphanages(response.data);
+  useFocusEffect(() => {
+    api.get('orphanages').then(response => {
+      setOrphanages(response.data);
     })
       .catch(error => {
-        console.log("Deu ruim!");
-        console.log(error);
-      });*/
-    const res = getMoviesFromApi();
-    console.log(res);
-  }, []);
+        console.error(error);
+      });
+  });
 
-  function handleNavigateToOrphanageDetails() {
-    navigation.navigate('OrphanageDetails');
+  function handleNavigateToOrphanageDetails(id: number) {
+    navigation.navigate('OrphanageDetails', { id });
   }
 
   function handleNavigateToCreateOrphanage() {
@@ -87,7 +67,7 @@ const OrphanagesMap: React.FC = () => {
                 longitude: orphanage.longitude,
               }}
             >
-              <Callout tooltip onPress={handleNavigateToOrphanageDetails}>
+              <Callout tooltip onPress={() => handleNavigateToOrphanageDetails(orphanage.id)}>
                 <View style={styles.calloutContainer}>
                   <Text style={styles.calloutText}>{orphanage.name}</Text>
                 </View>
