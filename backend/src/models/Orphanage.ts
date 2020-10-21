@@ -34,7 +34,13 @@ export default class Orphanage {
   @JoinColumn({ name: 'orphanage_id' })
   images: Image[];
 
-  @ManyToOne(() => Representative, representative => representative.orphanages)
+  /*@ManyToOne(() => Representative, representative => representative.orphanages, {
+    eager: true,
+    cascade: ['insert', 'update']
+  })
   @JoinColumn({ name: 'representative_id' })
-  representative: Representative;
+  representative: Representative;*/
+
+  @ManyToOne(() => Representative, (representative: Representative) => representative.orphanages)
+  public representative: Representative;
 }

@@ -23,8 +23,6 @@ const OrphanagesMap: React.FC = () => {
   function getUserPosition() {
     navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
-      console.log("position")
-      console.log(position.coords);
       setUserPosition({ latitude, longitude });
     }, (err) => {
       console.warn(err);
@@ -40,6 +38,7 @@ const OrphanagesMap: React.FC = () => {
     getUserPosition();
 
     api.get('orphanages').then(response => {
+      console.log(response.data);
       setOrphanages(response.data);
     });
   }, []);
@@ -65,7 +64,6 @@ const OrphanagesMap: React.FC = () => {
         zoom={15}
         style={{ width: '100%', height: '100%' }}
       >
-        {console.log(userPosition)}
         {/* <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" /> */}
         <TileLayer url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`} />
 

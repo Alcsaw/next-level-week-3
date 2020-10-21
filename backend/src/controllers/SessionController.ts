@@ -50,7 +50,9 @@ export default {
 
     return response.json({
       representative,
-      token: sign({ id: representative.id }, process.env.APP_SECRET)
+      token: sign({ id: representative.id }, process.env.APP_SECRET, {
+        expiresIn: '1d'
+      })
     });
   }
 };
