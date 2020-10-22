@@ -55,7 +55,7 @@ export default {
       instructions,
       opening_hours,
       open_on_weekends: open_on_weekends === 'true',
-      representative_id,
+      representative_id: parseInt(representative_id),
       images
     };
 

@@ -48,18 +48,24 @@ export class createOrphanages1602588887133 implements MigrationInterface {
           default: false
         },
         {
-          name: 'representativeId',
+          name: 'representative_id',
           type: 'integer'
+        },
+        {
+          name: 'created_at',
+          type: 'date'
+        },
+        {
+          name: 'updated_at',
+          type: 'date'
         }
       ],
       foreignKeys: [
         {
           name: 'OrphanageRepresentative',
-          columnNames: ['representativeId'],
+          columnNames: ['representative_id'],
           referencedTableName: 'representatives',
-          referencedColumnNames: ['id'],
-          onUpdate: 'CASCADE',
-          onDelete: 'CASCADE',
+          referencedColumnNames: ['id']
         }
       ]
     }));

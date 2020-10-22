@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn, ManyToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn, ManyToOne, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import Image from './Image';
 import Representative from './Representative';
 
@@ -34,13 +34,16 @@ export default class Orphanage {
   @JoinColumn({ name: 'orphanage_id' })
   images: Image[];
 
-  /*@ManyToOne(() => Representative, representative => representative.orphanages, {
-    eager: true,
-    cascade: ['insert', 'update']
-  })
-  @JoinColumn({ name: 'representative_id' })
-  representative: Representative;*/
+  @Column()
+  representative_id: number;
 
   @ManyToOne(() => Representative, (representative: Representative) => representative.orphanages)
-  public representative: Representative;
+  @JoinColumn({ name: 'representative_id' })
+  representative: Representative;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 }

@@ -25,8 +25,7 @@ export class createRepresentatives1603060006776 implements MigrationInterface {
         {
           name: 'password',
           type: 'varchar'
-        }
-        ,
+        },
         {
           name: 'created_at',
           type: 'date'

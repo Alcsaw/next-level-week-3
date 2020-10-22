@@ -32,14 +32,9 @@ export default class Representative {
     this.password = await hash(this.password, 8);
   }
 
-  // @OneToMany(() => Orphanage, orphanage => orphanage.representative, {
-  //   cascade: ['insert', 'update']
-  // })
-  /*@JoinColumn({ name: 'representative_id' })
-  orphanages: Orphanage[];*/
-
   @OneToMany(() => Orphanage, (orphanage: Orphanage) => orphanage.representative)
-  public orphanages: Orphanage[];
+  @JoinColumn({ name: 'representative_id' })
+  orphanages: Orphanage[];
 
   @CreateDateColumn()
   created_at: Date;
