@@ -1,6 +1,5 @@
 import React from 'react';
 
-import mapMarkerImg from '../images/map-marker.svg';
 import logoVertical from '../images/logo-vertical.svg';
 
 import '../styles/components/auth-sidebar.css';

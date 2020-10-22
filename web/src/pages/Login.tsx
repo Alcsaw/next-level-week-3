@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
 import { useAuth } from '../contexts/auth';
-import api from '../services/api';
 
 import ApresentationSidebar from '../components/AuthSidebar';
 
@@ -22,40 +21,10 @@ const Login: React.FC = () => {
     event.preventDefault();
 
     login(email, password);
-
-    /*const data = {
-      email,
-      password
-    }
-
-    try {
-      const response = await api.post('sessions', data);
-
-      console.log(response)
-
-      if (response.data.token === undefined) {
-        alert(response.data.message);
-      } else {
-        //TODO: Use cookies instead https://dev.to/gkoniaris/how-to-securely-store-jwt-tokens-51cf
-        localStorage.setItem('@Happy/id', response.data.representative.id.toString())
-        localStorage.setItem('@Happy/name', response.data.representative.name)
-        localStorage.setItem('@Happy/token', response.data.token)
-
-        push('/app');
-      }
-    } catch (error) {
-      console.log(error);
-      alert(error.message);
-    }*/
-
-
   }
 
-  const token = localStorage.getItem('@Happy/token');
-
-  if (token) {
-    //push('/dashboard');
-    push('/app');
+  if (loggedIn) {
+    push('/dashboard');
   }
 
   return (

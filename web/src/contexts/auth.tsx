@@ -3,14 +3,15 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 import * as auth from '../services/auth';
 import api from '../services/api';
 
-interface User {
+interface Representative {
+  id: number;
   name: string;
   email: string;
 };
 
 interface AuthContextData {
   loggedIn: boolean;
-  user: User | null;
+  representative: Representative | null;
   loading: boolean;
   login(email: string, password: string): Promise<void>;
   logout(): void;
@@ -19,18 +20,18 @@ interface AuthContextData {
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 export const AuthProvider: React.FC = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
+  const [representative, setRepresentative] = useState<Representative | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     function loadStorageData() {
-      const storageUser = localStorage.getItem('@Happy:user');
+      const storageRepresentative = localStorage.getItem('@Happy:representative');
       const storageToken = localStorage.getItem('@Happy:token');
 
-      if (storageUser && storageToken) {
+      if (storageRepresentative && storageToken) {
         api.defaults.headers['Authorization'] = `Bearer ${storageToken}`;
 
-        setUser(JSON.parse(storageUser));
+        setRepresentative(JSON.parse(storageRepresentative));
         setLoading(false);
       } else {  // not yet authenticated
         setLoading(false);
@@ -43,21 +44,21 @@ export const AuthProvider: React.FC = ({ children }) => {
   async function login(email: string, password: string) {
     const response = await auth.login(email, password);
 
-    setUser(response.user);
+    setRepresentative(response.representative);
 
     api.defaults.headers['Authorization'] = `Bearer ${response.token}`;
 
-    localStorage.setItem('@Happy:user', JSON.stringify(response.user));
+    localStorage.setItem('@Happy:representative', JSON.stringify(response.representative));
     localStorage.setItem('@Happy:token', response.token);
   };
 
   function logout() {
-    setUser(null);
+    setRepresentative(null);
     localStorage.clear();
   };
 
   return (
-    <AuthContext.Provider value={{ loggedIn: !!user, user, loading, login, logout }} >
+    <AuthContext.Provider value={{ loggedIn: !!representative, representative, loading, login, logout }} >
       {children}
     </AuthContext.Provider>
   );
