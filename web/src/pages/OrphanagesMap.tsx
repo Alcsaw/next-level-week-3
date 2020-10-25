@@ -31,11 +31,11 @@ const OrphanagesMap: React.FC = () => {
 
   useEffect(() => {
 
-    if (navigator.geolocation) {
+    if (navigator.geolocation && userPosition.latitude === 0) {
+      //TODO: position is lost when changing pages, so this should
+      // be store in an upper level
       getUserPosition();
     }
-    console.log(navigator.geolocation)
-    getUserPosition();
 
     api.get('orphanages').then(response => {
       console.log(response.data);
