@@ -14,14 +14,14 @@ aside.app-sidebar img {
   width: 48px;
 }
 
-aside.app-sidebar footer a,
-aside.app-sidebar footer button {
+aside.app-sidebar a,
+aside.app-sidebar button {
   width: 48px;
   height: 48px;
 
   border: 0;
 
-  background: #12AFCB;
+  background: var(--blue-secondary);
   border-radius: 16px;
 
   cursor: pointer;
@@ -33,7 +33,31 @@ aside.app-sidebar footer button {
   align-items: center;
 }
 
-aside.app-sidebar footer a:hover,
-aside.app-sidebar footer button:hover {
-  background: #17D6EB;
+aside.app-sidebar a:hover,
+aside.app-sidebar button:hover {
+  background: var(--blue-tertiary);
+}
+
+/*Dashboard*/
+aside.app-sidebar .middle button:first-of-type {
+  margin-bottom: 15px;
+}
+
+aside.app-sidebar .middle button.active-button {
+  background: var(--yellow);
+}
+
+#notifications-button {
+  position: relative;
+}
+
+.notification-badge {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 54%;
+  top: 24%;
+  background-color: var(--yellow);
+  border: 2px solid var(--blue-secondary);
+  border-radius: 50%;
 }
