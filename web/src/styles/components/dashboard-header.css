@@ -1,0 +1,27 @@
+.dashboard-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid var(--border-low-contrast);
+  margin-bottom: 40px;
+  width: 100%;
+  /* padding: 64px 112px 24px 112px; */
+  padding-top: 64px;
+  padding-bottom: 24px;
+  /*margin: 0 112px 0 112px;*/
+}
+
+.dashboard-header h2 {
+  font-size: 32px;
+  line-height: 34px;
+  color: var(--text-titles);
+  font-weight: 700;
+}
+
+.dashboard-header p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 600;
+}

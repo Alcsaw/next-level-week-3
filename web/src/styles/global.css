@@ -21,6 +21,8 @@ body, input, button, textarea {
   --yellow: #FFD666;          /*selected-button and notification*/
   --text-primary: #FFF;
   --text-secondary: #8FA7B2;
+  --text-tertiary: #5C8599;
   --text-titles: #4D6F80;
   --text-button-hover: #0089A5;
+  --border-low-contrast: #D3E2E5;
 }

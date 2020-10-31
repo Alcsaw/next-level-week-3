@@ -1,0 +1,60 @@
+.dashboard {
+  /* display: grid;
+  grid-template-columns: 96px auto;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "aside main"
+                       "aside main" */
+  display: flex;
+  flex-direction: column;
+}
+
+/*.dashboard .app-sidebar {
+  grid-area: aside;
+}*/
+
+/* .dashboard .dashboard-header {
+  grid-area: header;
+} */
+
+.dashboard main {
+  margin: 0 112px;
+  margin-left: 208px;
+  /* grid-area: main; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+}
+
+.orphanage-list {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 32px;
+}
+
+.orphanage-list .map-container {
+  margin-top: 64px;
+  background: #E6F7FB;
+  border: 1px solid #B3DAE2;
+  border-radius: 20px;
+  /* width: 544px; */
+}
+
+.orphanage-list .map-container footer {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.orphanage-list .map-container footer a {
+  line-height: 24px;
+  color: #0089A5;
+  text-decoration: none;
+}
+
+.orphanage-list .map-container .leaflet-container {
+  border-bottom: 1px solid #DDE3F0;
+  border-radius: 20px;
+}
